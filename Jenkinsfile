@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/yourusername/devops-nodejs-project.git'
+                git branch: 'main', url: 'https://github.com/yourusername/devops-nodejs-project.git'
             }
         }
 
@@ -17,7 +17,7 @@ pipeline {
 
         stage('Run Application') {
             steps {
-                sh 'nohup node app.js &'
+                sh 'node app.js &'
             }
         }
 
